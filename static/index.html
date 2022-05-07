@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" as="style" type="text/css" crossorigin>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/static/assets/style.css">
+  </head>
+  <body>
+    <a id="skip-to-content" href="#content">Skip to the content.</a>
+    <%- include('static/header') %>
+    <main id="content" class="main-content" role="main">
+      <%- content %>
+      <footer class="site-footer">
+        <span class="site-footer-credits">Copyright © 2022 <a href="https://github.com/splendid-cms/">Splendid</a>.</span>
+      </footer>
+    </main>
+  </body>
+  <script>
+    const Http = new XMLHttpRequest();
+    Http.open("GET", "https://api.github.com/repos/splendid-cms/main/releases/latest", true);
+    Http.send();
+    Http.onload = function() {
+      var jsonResponse = JSON.parse(Http.responseText);
+      document.getElementsByClassName("zip")[0].href = jsonResponse.assets[1].browser_download_url;
+      document.getElementsByClassName("tar")[0].href = jsonResponse.assets[0].browser_download_url; 
+    }
+  </script>
+</html>
