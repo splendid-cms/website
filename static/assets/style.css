@@ -480,6 +480,25 @@ body {
   background-color: #141418;
 }
 
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #212125;
+}
+
+::-webkit-scrollbar-track {
+  background: #141418;
+}
+
+* {
+  scrollbar-face-color: #212125;
+  scrollbar-track-color: #141418;
+  scrollbar-color: #212125 #141418;
+  scrollbar-width: thin;
+}
+
 #skip-to-content {
   height: 1px;
   width: 1px;

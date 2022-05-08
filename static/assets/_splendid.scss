@@ -35,6 +35,25 @@ body {
   background-color: $body-background-color;
 }
 
+// For Google Chrome
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: $body-foreground-color;
+}
+::-webkit-scrollbar-track {
+  background: $body-background-color;
+}
+
+// For Internet Explorer and firefox
+* {
+  scrollbar-face-color: $body-foreground-color;
+  scrollbar-track-color: $body-background-color;
+  scrollbar-color: $body-foreground-color $body-background-color;
+  scrollbar-width: thin;
+}
+
 #skip-to-content {
   height: 1px;
   width: 1px;
