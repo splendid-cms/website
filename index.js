@@ -43,7 +43,7 @@ fastify.get('*', async (req, res) => {
     });
 });
 
-fastify.listen(3000, (err, address) => {
+fastify.listen(3000, '0.0.0.0', (err, address) => {
     if (err) throw err
     // Server is now listening on ${address}
 });
