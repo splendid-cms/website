@@ -11,9 +11,64 @@
   </head>
   <body>
     <a id="skip-to-content" href="#content">Skip to the content.</a>
-    <%- include('static/header') %>
+    <header class="page-header" role="banner">
+      <h1 class="project-name">Splendid</h1>
+      <h2 class="project-tagline">Open-source Node.js cms based on a web framework Fastify for publishing web content on websites.</h2>
+      <a href="https://github.com/splendid-cms/main/" class="btn" id="github">View on GitHub</a>
+      <a href="https://github.com/splendid-cms/main/" class="btn zip" id="zip">Download .zip</a>
+      <a href="https://github.com/splendid-cms/main/" class="btn tar" id="tar">Download .tar.gz</a>
+    </header>
     <main id="content" class="main-content" role="main">
-      <%- content %>
+      <h1>Get started with Splendid!</h1>
+      <p>Splendid is a free magnificent <strong>open-source</strong> <a href="https://nodejs.org/en/">Node.js</a> content management system based on a <strong>fast</strong> web framework <a href="https://www.fastify.io/">Fastify</a> for publishing web content on websites using <a href="https://en.wikipedia.org/wiki/Markdown"><strong>Markdown</strong></a> markup language, <strong>plugins</strong> to improve user experience and <strong>themes</strong> to beautify this experience.</p>
+      <hr>
+      <h2>Installation</h2>
+      <p>Installation process requires you to have a <a href="https://nodejs.org/en/">Node.js</a> installed on your machine and nothing else.</p>
+      <h3>Create a project</h3>
+      <p><strong>Download</strong> one of two given options above: it can be either <a href="#zip">zip</a> or <a href="#tar">tar.gz</a>!</p>
+      <h3>Deploy the project</h3>
+      <p><strong>Unarchive</strong> or unzip the fresh downloaded folder in <code>project</code> root folder.</p>
+      <h3>Setup the project</h3>
+      <p><strong>Checkout</strong> <code>config.json</code> in order to configure basic information about the website. It may look like</p>
+      <pre><code class="json language-json">{
+    "Website_name": "Splendid",
+    "Theme": "preshow",
+    "Icon": "favicon.ico",
+    "Port": 3000,
+    "Plugins": [],
+    "Content": {
+        "Header": {
+            "Name": "/home/",
+            "Github": "https://github.com/splendid-cms"
+        },
+        "Sidebar": {
+            "Page Name": "/link-1/",
+            "Category": {
+                "Page Name": "/link-2/",
+                "Subcategory": {
+                    "Page Name": "/link-3/"
+                }
+            }
+        },
+        "Footer": "Footer text"
+    },
+    "Debug": false
+}</code></pre>
+      <ul>
+        <li>Where "Website_name" stays for the project name that will be used in header, title etc. (Depends on the theme),</li>
+        <li>"Theme" stays for the theme name i.e theme folder name inside the <code>/content/themes</code> directory,</li>
+        <li>"Icon" for the icon path that will be used in the browser tab (path already starts with <code>/content/media</code>),</li>
+        <li>"Port" that will be used to server listening,</li>
+        <li>"Plugins" for activated plugin names array i.e plugin folder name inside the <code>/plugins</code> directory,</li>
+        <li>"Content" for the basic content like Header, Sidebar and Footer (Depends on the theme and plugin. Basic version supports these 3),</li>
+        <li>"Debug" for logging events.</li>
+      </ul>
+      <p>After all done consider running <code>npm install</code> in the terminal in order to install missing dependencies that were used for the Splendid.</p>
+      <h3>Start the server</h3>
+      <p>It is recommended to use the nodemon starting in order to easily deploy changes without restarting the server. In order to do that use the <code>npm start</code> command. If you wish to simply use node command: <code>node .</code> or <code>node views/js/app.js</code></p>
+      <hr>
+      <h2>Documentation</h2>
+      <p>If you would like to learn more check out more <a href="https://github.com/splendid-cms/docs">here</a></p>
       <footer class="site-footer">
         <span class="site-footer-credits">Copyright © 2022 <a href="https://github.com/splendid-cms/">Splendid</a>.</span>
       </footer>
